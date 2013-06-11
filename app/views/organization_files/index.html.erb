@@ -1,0 +1,25 @@
+<h1>Listing organization_files</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @organization_files.each do |organization_file| %>
+  <tr>
+    <td><%= organization_file.user_id %></td>
+    <td><%= organization_file.name %></td>
+    <td><%= link_to 'Show', organization_file %></td>
+    <td><%= link_to 'Edit', edit_organization_file_path(organization_file) %></td>
+    <td><%= link_to 'Destroy', organization_file, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Organization file', new_organization_file_path %>
